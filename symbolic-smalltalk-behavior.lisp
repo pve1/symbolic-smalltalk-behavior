@@ -22,10 +22,10 @@
 (core::define-method (core:behavior basic-new)
   (core:basic-new self))
 
-(core:define-method (core:behavior instance-variables)
+(core:define-method (core:behavior inst-var-names)
   (core:instance-variables self))
 
-(core:define-method (core:behavior class-variables)
+(core:define-method (core:behavior class-var-names)
   (core:class-variables self))
 
 ;; Object class :add-selector '(:x x :y y)
