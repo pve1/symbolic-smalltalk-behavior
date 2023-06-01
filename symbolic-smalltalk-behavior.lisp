@@ -9,10 +9,8 @@
 (core:define-method (core:object class)
   (core:class self))
 
-(core:define-method (core:object :does-not-understand message)
-  (error 'core:message-not-understood
-         :recipient self
-         :message message))
+(defmethod core:does-not-understand ((recipient core:object) arguments function)
+  (call-next-method))
 
 ;;; Behavior
 
@@ -50,26 +48,3 @@
   (core:subclass self name
                  :instance-variables instance-variables
                  :class-variables class-variables))
-
-;;; Message
-
-(core:define-method (core:message recipient)
-  (core:message-recipient self))
-
-(core:define-method (core:message :recipient recipient)
-  (setf (core:message-recipient self) recipient)
-  self)
-
-(core:define-method (core:message selector)
-  (core:message-selector self))
-
-(core:define-method (core:message :selector selector)
-  (setf (core:message-selector self) selector)
-  self)
-
-(core:define-method (core:message arguments)
-  (core:message-arguments self))
-
-(core:define-method (core:message :arguments arguments)
-  (setf (core:message-arguments self) arguments)
-  self)
