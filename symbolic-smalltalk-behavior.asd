@@ -4,6 +4,6 @@
   :license "LGPL-3.0"
   :version "0.0.1"
   :serial t
-  :components ((:file "symbolic-smalltalk-behavior"))
+  :components ((:file "behavior"))
   :depends-on (#:symbolic-smalltalk-core
                #:alexandria))
