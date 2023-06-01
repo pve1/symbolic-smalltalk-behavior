@@ -39,6 +39,8 @@
 (core:define-method (core:behavior :add-slot-accessor slot-name)
   (core:add-slot-accessor self slot-name))
 
+;;; Class
+
 (core:define-method (core:class :subclass name)
   (core:subclass self name))
 
